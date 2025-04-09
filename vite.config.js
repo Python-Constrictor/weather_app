@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/weather_app/'
+    base: "/weather_app/",
 });
