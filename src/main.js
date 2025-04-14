@@ -19,6 +19,7 @@ function renderWeather({current,daily,hourly}) {
     renderCurrentWeather(current),
     renderDailyWeather(daily),
     renderHourlyWeather(hourly),
+    changePageHue(current),
     document.body.classList.remove("blurred")
 }
 
@@ -27,7 +28,7 @@ function setValue(selector, value, {parent = document} = {}){
 }
 
 function getIconUrl(iconcode){
-    return `${import.meta.env.BASE_URL}icons/${ICON_MAP.get(iconcode)}.svg`
+    return `${import.meta.env.BASE_URL}/icons/${ICON_MAP.get(iconcode)}.svg`
 }
 
 const currentIcon = document.querySelector("[data-current-icon]")
@@ -75,4 +76,14 @@ function renderHourlyWeather(hourly){
         element.querySelector("[data-icon]").src = getIconUrl(hour.iconCode)
         hourlySection.append(element)
     })
+}
+
+function changePageHue(current){
+    let hue;
+    let iconCode = current.iconCode;
+    if(iconCode == 0 || iconCode == 1 || iconCode == 2 || iconCode == 3) hue = 40;
+    else hue = 200;
+    document.documentElement.style.setProperty('--pageHue', hue);
+    document.documentElement.style.setProperty('--iconHue', `${(360-200)+hue}deg`);
+    return hue;
 }

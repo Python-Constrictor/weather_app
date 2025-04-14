@@ -1,10 +1,13 @@
+
+
+
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: hsl(200,100%,85%);
+  background-color: hsl(var(--pageHue,200),100%,85%);
   font-family: sans-serif;
 }
 
@@ -25,13 +28,14 @@ body {
   justify-content: center;
   margin: 0.5rem;
   padding: 0.5rem;
-  border-right: 2px solid hsl(200,100%,10%)
+  border-right: 2px solid hsl(var(--pageHue,200),100%,10%)
 }
 
 .weather-icon{
   width: 40px;
   height: 40px;
   object-fit: contain;
+  filter: hue-rotate(var(--iconHue, 0deg));
 }
 
 .weather-icon.large{
@@ -63,7 +67,7 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1rem;
-  color: hsl(200,100%,20%)
+  color: hsl(var(--pageHue,200),100%,20%)
 }
 
 .value-sub-info{
@@ -83,14 +87,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid hsl(200,100%,10%);
+  border: 1px solid hsl(var(--pageHue,200),100%,10%);
   border-radius: 0.25rem;
   padding: 0.25rem;
 }
 
 .day-card-day{
   font-size: .75 rem;
-  color: hsl(200,100%,20%);
+  color: hsl(var(--pageHue,200),100%,20%);
   margin-top: .5rem;
 }
 
@@ -101,11 +105,11 @@ body {
 }
 
 .hour-row{
-  background-color: hsl(200,100%,75%);
+  background-color: hsl(var(--pageHue,200), 100%, 75%);
 }
 
 .hour-row:nth-child(2n){
-  background-color: hsl(200,100%,70%);
+  background-color: hsl(var(--pageHue,200),100%,70%);
 }
 
 .hour-row > td{
