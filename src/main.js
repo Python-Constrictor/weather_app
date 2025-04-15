@@ -13,8 +13,6 @@ function positionError(){
     alert("we couldn't find you")
 }
 
-
-
 function renderWeather({current,daily,hourly}) {
     renderCurrentWeather(current),
     renderDailyWeather(daily),
@@ -81,8 +79,9 @@ function renderHourlyWeather(hourly){
 function changePageHue(current){
     let hue;
     let iconCode = current.iconCode;
-    if(iconCode == 0 || iconCode == 1 || iconCode == 2 || iconCode == 3) hue = 40;
-    else hue = 200;
+    //if(iconCode == 0 || iconCode == 1 || iconCode == 2 || iconCode == 3) hue = 40;
+    //else hue = 200;
+    hue = 40;
     document.documentElement.style.setProperty('--pageHue', hue);
     document.documentElement.style.setProperty('--iconHue', `${(360-200)+hue}deg`);
     return hue;
