@@ -3,6 +3,7 @@ import axios from "axios"
 export function getweather(lat, lon, timezone){
     //https://api.open-meteo.com/v1/forecast?daily=weather_code,temperature_2m_max,apparent_temperature_max,precipitation_sum,temperature_2m_min,apparent_temperature_min&hourly=temperature_2m,apparent_temperature,weather_code,precipitation,wind_speed_10m&current_weather=true&timeformat=unixtime&latitude=52.52&longitude=13.41
     console.log(lat);
+    console.log("asdf");
     console.log(lon);
     return axios.get(
         "https://api.open-meteo.com/v1/forecast?daily=weather_code,temperature_2m_max,precipitation_sum,apparent_temperature_max,precipitation_sum,temperature_2m_min,apparent_temperature_min&hourly=temperature_2m,apparent_temperature,weather_code,precipitation,wind_speed_10m,precipitation_probability&current_weather=true&timeformat=unixtime", {
